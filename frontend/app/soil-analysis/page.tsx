@@ -72,10 +72,13 @@ export default function SoilAnalysis() {
 
       formData.append("file", file);
 
-      const response = await fetch("http://127.0.0.1:8000/predict-soil", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/predict-soil`,
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       const data = await response.json();
 
