@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -12,8 +11,6 @@ from collections import Counter
 from pydantic import BaseModel, Field
 
 from model import predict_soil
-
-
 
 
 # ==========================================
@@ -35,7 +32,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://hems-ai-36th.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
